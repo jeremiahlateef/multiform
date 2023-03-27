@@ -1,14 +1,17 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import data from "./data";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const [pages, setPages] = useState(data);
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline font-ubuntu">Hello world!</h1>
+      {pages.map((pager) => {
+        const { id, page } = pager;
+        return <div key={id}>{page()}</div>;
+      })}
     </div>
   );
 }
