@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <div
-        className="bg-white mt-0 md:my-auto shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-4/5 md:h-[40rem]  md:items-start rounded-md h-full relative md:p-4 "
-        style={{ height: "100vh" }}
+        className="bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-4/5 md:h-[40rem]  md:items-start rounded-md h-full relative md:p-4 "
+        style={{ minHeight: "100vh" }}
       >
         <div className="w-full bg-purple-500 h-1/4 md:h-full lg:w-1/4 md:w-2/5  md:rounded-md ">
           <img
