@@ -9,7 +9,10 @@ function App() {
   const [pages, setPages] = useState(data);
   return (
     <>
-      <div className="bg-white mt-0 md:my-auto shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-4/5 md:h-[40rem]  md:items-start rounded-md h-screen relative md:p-4 ">
+      <div
+        className="bg-white mt-0 md:my-auto shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-4/5 md:h-[40rem]  md:items-start rounded-md h-full relative md:p-4 "
+        style={{ height: "100vh" }}
+      >
         <div className="w-full bg-purple-500 h-1/4 md:h-full lg:w-1/4 md:w-2/5  md:rounded-md ">
           <img
             src={mobileBg}
@@ -22,10 +25,7 @@ function App() {
             className="w-full hidden md:block h-full object-cover rounded-md"
           />
         </div>
-        <div
-          className="md:flex md:flex-col md:justify-between md:mt-6 md:h-4/5  md:w-2/3"
-          style={{ height: "30rem" }}
-        >
+        <div className="md:flex md:flex-col md:mt-6 md:h-4/5  md:w-2/3 md:gap-y-12 ">
           <div className="bg-green-300 shadow-lg w-4/5 mx-auto rounded-md top-28   absolute left-1/2 transform -translate-x-1/2 z-10 md:static md:translate-x-0 md:translate-y-0  md:shadow-none md:w-full">
             <p className="text-center w-full mx-auto">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
