@@ -26,7 +26,7 @@ function App() {
           />
         </div>
         <div className="md:flex md:flex-col md:mt-6 md:h-4/5  md:w-2/3 md:gap-y-12 ">
-          <div className="bg-green-300 shadow-lg w-4/5 mx-auto rounded-md top-28   absolute left-1/2 transform -translate-x-1/2 z-10 md:static md:translate-x-0 md:translate-y-0  md:shadow-none md:w-full">
+          <div className="bg-green-300 shadow-lg w-4/5 mx-auto rounded-md top-24   absolute left-1/2 transform -translate-x-1/2 z-10 md:static md:translate-x-0 md:translate-y-0  md:shadow-none md:w-full">
             <p className="text-center w-full mx-auto">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
               quia veniam quos mollitia nesciunt aspernatur incidunt culpa
