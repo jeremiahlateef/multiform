@@ -11,6 +11,8 @@ const formsPage = [
     info: "your info",
     footerOne: "",
     footerTwo: "next step",
+    title: "Personal info",
+    text: "Please provide your name, email address, and phone number.",
   },
   {
     id: 2,
@@ -20,6 +22,8 @@ const formsPage = [
     info: "select plan",
     footerOne: "go back",
     footerTwo: "next step",
+    title: "Select your plan",
+    text: "You have the option of monthly or yearly billing.",
   },
   {
     id: 3,
@@ -29,6 +33,8 @@ const formsPage = [
     info: "add-ons",
     footerOne: "go back",
     footerTwo: "next step",
+    title: "Pick add-ons",
+    text: "Add-ons help enhance your gaming experience.",
   },
   {
     id: 4,
@@ -38,6 +44,8 @@ const formsPage = [
     info: "summary",
     footerOne: "go back",
     footerTwo: "confirm",
+    title: "Finishing up",
+    text: "Double-check everything looks OK before confirming.",
   },
 ];
 export default formsPage;
