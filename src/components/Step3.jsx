@@ -1,7 +1,13 @@
 import React from "react";
-
+import Header from "./Header";
 const Step3 = () => {
-  return <div>Test3</div>;
+  return (
+    <>
+      <div className="">
+        <Header number={2} />
+      </div>
+    </>
+  );
 };
 
 export default Step3;
