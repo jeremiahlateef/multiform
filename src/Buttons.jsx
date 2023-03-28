@@ -16,7 +16,7 @@ const Buttons = ({ filterItems, button, value, setValue }) => {
                           ${
                             // if index equals value, then add the classes.
                             index === value &&
-                            `bg-lightBlue text-marineBlue  border-transparent`
+                            `bg-lightBlue text-marineBlue  border-none`
                           }`}
               type="button"
               onClick={() => setValue(index)}
