@@ -3,14 +3,21 @@ import "./App.css";
 import data from "./data";
 import mobileBg from "./images/bg-sidebar-mobile.svg";
 import desktopBg from "./images/bg-sidebar-desktop.svg";
+import Buttons from "./Buttons";
+import Footer from "./Footer";
+import Pages from "./Pages";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [pages, setPages] = useState(data);
+  const [foots, footer] = useState([]);
+  const [value, setValue] = useState(0);
+
   return (
     <>
-      <div className="bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-4/5 md:h-[35rem]  md:items-start rounded-md relative md:p-4 h-[100vh]">
-        <div className="w-full bg-purple-500 h-1/4 md:h-full lg:w-1/4 md:w-2/5  md:rounded-md ">
+      <div className="bg-magnolia md:bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-4/5 md:h-[35rem]  md:items-start rounded-md relative md:p-4 h-[100vh]">
+        <Buttons button={pages} value={value} setValue={setValue} />
+
+        <div className="w-full bg-purple-500 h-1/4 md:h-full md:static absolute lg:w-1/4 md:w-2/5  md:rounded-md ">
           <img
             src={mobileBg}
             alt=""
@@ -23,32 +30,12 @@ function App() {
           />
         </div>
         <div className="md:flex md:flex-col md:mt-6 md:h-4/5  md:w-2/3 md:gap-y-12 ">
-          <div className="bg-green-300 shadow-lg w-4/5 mx-auto rounded-md top-28   absolute left-1/2 transform -translate-x-1/2 z-10 md:static md:translate-x-0 md:translate-y-0  md:shadow-none md:w-full">
-            <p className="text-center w-full mx-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              quia veniam quos mollitia nesciunt aspernatur incidunt culpa
-              numquam! Accusantium, officia commodi. Quos voluptatibus dolore
-              ab, atque odit et reprehenderit illum?
-            </p>
-          </div>
-          <footer className="bg-red-300 absolute md:relative md:bottom-auto bottom-0 h-16 w-full md:mx-auto right-0 md:w-full">
-            <button className="bg-blue-400 p-3 mx-auto transform -translate-y-1/2 top-1/2 rounded absolute md:right-0 right-6">
-              Next Step
-            </button>
-            <button className="bg-blue-400 p-3 mx-auto transform -translate-y-1/2 top-1/2 rounded absolute md:left-0 left-6">
-              Next Step
-            </button>
-          </footer>
+          <Pages pager={pages} value={value} />
+          <Footer footBtn={pages} value={value} setValue={setValue} />
         </div>
       </div>
     </>
   );
 }
 
-{
-  /* {pages.map((pager) => {
-        const { id, page } = pager;
-        return <div key={id}>{page()}</div>;
-      })} */
-}
 export default App;
