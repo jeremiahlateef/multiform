@@ -8,8 +8,10 @@ const Header = ({ number }) => {
 
   return (
     <>
-      <div className="">
-        <h1 className="text-marineBlue font-bold text-3xl">{title}</h1>
+      <div className="mb-4 md:mb-8">
+        <h1 className="text-marineBlue font-bold text-2xl md:text-3xl">
+          {title}
+        </h1>
         <p className="text-gray">{text}</p>
       </div>
     </>
