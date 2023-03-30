@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-alabaster md:bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-5/6 lg:w-full md:h-[35rem]  md:items-start rounded-md relative md:p-4 h-[100vh]">
+      <div className="bg-alabaster md:bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-5/6 lg:w-full md:h-[35rem]  md:items-start rounded-md relative md:p-4 min-h-[100vh]">
         <Buttons button={pages} value={value} setValue={setValue} />
 
         <div className="w-full bg-purple-500 h-1/4 md:h-full md:static absolute  md:w-2/5  md:rounded-md ">
