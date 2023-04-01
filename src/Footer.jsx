@@ -1,7 +1,7 @@
 import React from "react";
 
-const Footer = ({ footBtn, value, setValue }) => {
-  // use an array to display just one item
+const Footer = ({ setFormValue, footBtn, value, setValue }) => {
+  // use an array to display just one item from the data
   const { footerOne, footerTwo } = footBtn[value];
   return (
     <footer className="bg-white absolute md:relative md:bottom-auto bottom-0 h-20 w-full md:mx-auto right-0 md:w-full">
