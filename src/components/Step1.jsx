@@ -2,11 +2,21 @@ import React from "react";
 import Header from "./Header";
 import { useState } from "react";
 
-const Step1 = () => {
-  const [formValue, setFormValue] = useState(0);
+const Step1 = ({ setFormValue, value, setValue }) => {
+  // const [formValue, setFormValue] = useState(0);
+
+  const handleChange = () => {};
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const formData = new FormData.fromEntries(e.currentTarget);
+    console.log(formData);
+    const newUser = Object.fromEntries(formData);
+
+    console.log(newUser);
   };
+  // setFormValue(handleSubmit);
   return (
     <>
       <div className="">
