@@ -6,6 +6,7 @@ const formsPage = [
   {
     id: 1,
     page: () => <Step1 />,
+    // page: (value) => <Step1 value={value} />,
     buttons: 1,
     step: "step 1",
     info: "your info",
