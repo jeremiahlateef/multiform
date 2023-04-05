@@ -43,10 +43,11 @@ const Step1 = ({ setFormValue, value, setValue }) => {
                 type="text"
                 name="name"
                 id="name"
-                className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:border-red-300"
+                className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-marineBlue"
                 placeholder="e.g Stephen King"
               />
             </div>
+            {/* email */}
             <div className="w-full mb-3 md:mb-6">
               <div className="flex justify-between">
                 <label
@@ -66,10 +67,11 @@ const Step1 = ({ setFormValue, value, setValue }) => {
                 type="email"
                 name="email"
                 id="email"
-                className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:border-red-300"
+                className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-1 focus:outline-marineBlue  focus:border-0 "
                 placeholder="e.g stephenking@lorem.com"
               />
             </div>
+            {/* Number */}
             <div className="w-full mb-3 md:mb-6">
               <div className="flex justify-between">
                 <label
@@ -89,7 +91,7 @@ const Step1 = ({ setFormValue, value, setValue }) => {
                 type="number"
                 name="number"
                 id="number"
-                className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:border-red-300"
+                className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-marineBlue"
                 placeholder="e.g +1 234 567 890"
               />
             </div>
