@@ -14,10 +14,10 @@ function App() {
 
   return (
     <>
-      <div className="bg-alabaster md:bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-5/6 lg:w-full md:h-[35rem]  md:items-start rounded-md relative md:p-4 min-h-[100vh]">
+      <div className="bg-alabaster md:bg-white mt-0  shadow-lg w-full mx-auto md:flex md:gap-x-12 md:w-5/6 lg:w-full  md:items-start rounded-md relative md:p-4 h-[100vh] md:h-[38rem]">
         <Buttons button={pages} value={value} setValue={setValue} />
 
-        <div className="w-full bg-purple-500 h-1/4 md:h-full md:static absolute  md:w-2/5  md:rounded-md ">
+        <div className="w-full h-1/4 md:h-full md:static absolute  md:w-[20rem]  md:rounded-md ">
           <img
             src={mobileBg}
             alt=""
@@ -29,7 +29,7 @@ function App() {
             className="w-full hidden md:block h-full object-cover rounded-md"
           />
         </div>
-        <div className="md:flex md:flex-col md:mt-6 md:h-4/5  md:w-3/4 md:gap-y-10 pr-10 ">
+        <div className="md:flex md:flex-col md:mt-6 md:w-[25rem] lg:w-[30rem] md:h-4/5  md:gap-y-10 pr-10 ">
           <Pages pager={pages} value={value} />
           <Footer footBtn={pages} value={value} setValue={setValue} />
         </div>
