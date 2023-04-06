@@ -11,6 +11,7 @@ function App() {
   const [pages, setPages] = useState(data);
   const [foots, footer] = useState([]);
   const [value, setValue] = useState(0);
+  const [formValue, setFormValue] = useState(null);
 
   return (
     <>
@@ -30,8 +31,13 @@ function App() {
           />
         </div>
         <div className="md:flex md:flex-col md:mt-6 md:w-[25rem] lg:w-[30rem] md:h-4/5  md:gap-y-10 pr-10 ">
-          <Pages pager={pages} value={value} />
-          <Footer footBtn={pages} value={value} setValue={setValue} />
+          <Pages pager={pages} value={value} setFormValue={setFormValue} />
+          <Footer
+            footBtn={pages}
+            value={value}
+            setValue={setValue}
+            setFormValue={setFormValue}
+          />
         </div>
       </div>
     </>

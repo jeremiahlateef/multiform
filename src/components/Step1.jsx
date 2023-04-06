@@ -3,9 +3,27 @@ import Header from "./Header";
 import { useState } from "react";
 
 const Step1 = ({ setFormValue, value, setValue }) => {
-  // const [formValue, setFormValue] = useState(0);
+  // This useState function below is to store the value inputted in the forms.
 
-  const handleChange = () => {};
+  const [userInput, setUserInput] = useState({
+    // To make this work: 1. set name to name in the input for name, value as formValue.name
+    // 2. set name to email in the input for name, value as formValue.email
+    // 3. set name to number in input for number, value as formValue.number
+    // set onChange to handleChange
+    name: "",
+    email: "",
+    number: "",
+  });
+
+  const handleChange = (e) => {
+    // console.log(e.target.name);
+    // console.log(e.target.value);
+
+    //set the useState function (setUserInput) to the value that will be inputted in the form.
+    // In other words, we update the value in the object to what is inputted.
+    // We used dynamic keys
+    setUserInput({ ...userInput, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,8 +33,14 @@ const Step1 = ({ setFormValue, value, setValue }) => {
     const newUser = Object.fromEntries(formData);
 
     console.log(newUser);
+    // setFormValue(console.log("hi"));
   };
-  // setFormValue(handleSubmit);
+  // const mockBtn = () => {
+  //   setFormValue(handleSubmit);
+  //   console.log("hi");
+  // };
+
+  // mockBtn;
   return (
     <>
       <div className="">
@@ -43,6 +67,8 @@ const Step1 = ({ setFormValue, value, setValue }) => {
                 type="text"
                 name="name"
                 id="name"
+                value={userInput.name}
+                onChange={handleChange}
                 className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-marineBlue"
                 placeholder="e.g Stephen King"
               />
@@ -67,6 +93,8 @@ const Step1 = ({ setFormValue, value, setValue }) => {
                 type="email"
                 name="email"
                 id="email"
+                value={userInput.email}
+                onChange={handleChange}
                 className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-1 focus:outline-marineBlue  focus:border-0 "
                 placeholder="e.g stephenking@lorem.com"
               />
@@ -91,6 +119,8 @@ const Step1 = ({ setFormValue, value, setValue }) => {
                 type="number"
                 name="number"
                 id="number"
+                value={userInput.number}
+                onChange={handleChange}
                 className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-marineBlue"
                 placeholder="e.g +1 234 567 890"
               />

@@ -7,6 +7,37 @@ import { useState } from "react";
 const Step2 = () => {
   const [prices, setPrices] = useState(false);
 
+  // ARCADE FUNCTIONALITY
+  // This is to toggle the checked state of the Arcade Plan
+  const [checkedBoxes, setCheckedBoxes] = useState(false);
+
+  // This is used for the onChange functionality in the arcade checkbox
+  const handleSetCheckedBoxes = (e) => {
+    setCheckedBoxes(e.target.checked);
+  };
+
+  // ADVANCED FUNCTIONALITY
+  // This is to toggle the checked state of the Advanced Plan
+  const [advCheckedBoxes, setAdvCheckedBoxes] = useState(false);
+
+  // This is used for the onChange functionality in the Advanced checkbox
+  const handleSetAdvCheckedBoxes = (e) => {
+    setAdvCheckedBoxes(e.target.checked);
+  };
+
+  // PRO FUNCTIONALITY
+  // This is to toggle the checked state of the Pro Plan
+  const [proCheckedBoxes, setProCheckedBoxes] = useState(false);
+
+  // This is used for the onChange functionality in the Pro checkbox
+  const handleSetProCheckedBoxes = (e) => {
+    setProCheckedBoxes(e.target.checked);
+  };
+  // This is the onChange functionality for the form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   // You can only add one object to a useState hook.
   // This is the data for the month price for the arcade plan
   const [monthArcade, setMonthArcade] = useState({ price: "$9/mo" });
@@ -66,7 +97,7 @@ const Step2 = () => {
 
   // This is the component for the toggle button
   // The style for the component is in App.css
-  const ToggleBt = () => {
+  const ToggleBtn = () => {
     return (
       <div
         id="w-full"
@@ -86,6 +117,7 @@ const Step2 = () => {
             checked={prices}
             name="button"
             id="button"
+            className="linear duration-500"
             onChange={handleCheck}
           />
           <span className="slider round"></span>
@@ -104,11 +136,22 @@ const Step2 = () => {
 
   return (
     <>
-      <div className="md:w-full mb-8">
+      <div className="md:w-full">
         <Header number={1} />
-        <form action="">
-          <div className="flex flex-col md:flex-row  gap-3 ">
-            <div className="w-full p-4 border rounded-md border-marineBlue flex md:block items-start gap-3">
+        <form action="" onSubmit={handleSubmit}>
+          <div className="flex flex-col md:flex-row mb-8 gap-3 ">
+            <input
+              type="checkbox"
+              value="arcade"
+              id="arcade"
+              checked={checkedBoxes}
+              onChange={handleSetCheckedBoxes}
+              className="invisible absolute"
+            />
+            <label
+              htmlFor="arcade"
+              className="w-full linear duration-200 md:w-1/3 p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start  gap-3 cursor-pointer"
+            >
               <img src={arcadeImg} alt="" className="md:mb-7" />
               <div className="">
                 <h3 className="text-marineBlue text-base font-semibold">
@@ -116,32 +159,51 @@ const Step2 = () => {
                 </h3>
                 {prices ? <PriceYear /> : <PriceMonth />}
               </div>
-            </div>
-            <div className="w-full p-4 border rounded-md border-marineBlue flex md:block items-start gap-3">
+            </label>
+            <input
+              type="checkbox"
+              value="advanced"
+              id="advanced"
+              checked={advCheckedBoxes}
+              onChange={handleSetAdvCheckedBoxes}
+              className="invisible absolute "
+            />
+            <label
+              htmlFor="advanced"
+              className="w-full linear duration-200 md:w-1/3 p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start advanced gap-3 cursor-pointer"
+            >
               <img src={advancedImg} alt="" className="md:mb-7" />
               <div className="">
                 <h3 className="text-marineBlue text-base font-semibold">
-                  Arcade
+                  Advanced
                 </h3>
                 {prices ? <PriceYear /> : <PriceMonth />}
               </div>
-            </div>
-            <div className="w-full p-4 border rounded-md border-marineBlue flex md:block items-start gap-3">
+            </label>
+            <input
+              type="checkbox"
+              value="pro"
+              id="pro"
+              checked={proCheckedBoxes}
+              onChange={handleSetProCheckedBoxes}
+              className="invisible absolute"
+            />
+            <label
+              htmlFor="pro"
+              className="w-full linear duration-200 md:w-1/3 p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start  gap-3 cursor-pointer"
+            >
               <img src={proImg} alt="" className="md:mb-7" />
               <div className="">
-                <h3 className="text-marineBlue text-base font-semibold">
-                  Arcade
-                </h3>
+                <h3 className="text-marineBlue text-base font-semibold">Pro</h3>
                 {prices ? <PriceYear /> : <PriceMonth />}
               </div>
-            </div>
+            </label>
           </div>
+          <button type="button" className="" onClick={() => TogglePriceState()}>
+            <ToggleBtn />
+          </button>
         </form>
       </div>
-
-      <button type="button" className="" onClick={() => TogglePriceState()}>
-        <ToggleBt />
-      </button>
     </>
   );
 };
