@@ -40,11 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+/* 
+=============
+Style for the Button in Step 2
+=============
+*/
 .switch {
   position: relative;
   display: inline-block;
   width: 48px;
   height: 28px;
+  transition: 0.4s linear all;
 }
 
 .switch input {
@@ -61,8 +67,8 @@
   right: 0;
   bottom: 0;
   background-color: hsl(213, 96%, 18%);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.4s linear all;
+  transition: 0.4s linear all;
 }
 
 .slider:before {
@@ -73,19 +79,19 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.4s linear all;
+  transition: 0.4s linear all;
 }
 
-input:checked + .slider {
+#button:checked + .slider {
   background-color: hsl(213, 96%, 18%);
 }
 
-input:focus + .slider {
+#button:focus + .slider {
   box-shadow: 0 0 1px hsl(213, 96%, 18%);
 }
 
-input:checked + .slider:before {
+#button:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
@@ -98,4 +104,27 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+/* 
+=============
+End of style for the Button in Step 2
+=============
+*/
+
+/* 
+=============
+Style for the checked inputs in Step 2
+=============
+*/
+#pro:checked + label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(213, 96%, 18%);
+}
+#advanced:checked + .advanced {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(213, 96%, 18%);
+}
+#arcade:checked + label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(213, 96%, 18%);
 }
