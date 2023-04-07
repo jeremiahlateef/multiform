@@ -11,9 +11,31 @@ const Step2 = () => {
   // This is to toggle the checked state of the Arcade Plan
   const [checkedBoxes, setCheckedBoxes] = useState(false);
 
+  // Functionality to make all other checkboxes unchecked when a checkbox is clicked
+  // Always define the values or you'll get an uncontrolled input error.
+  const [checkBoxFunc, setCheckBoxFunc] = useState({
+    name: "",
+    checked: "true",
+  });
+
   // This is used for the onChange functionality in the arcade checkbox
   const handleSetCheckedBoxes = (e) => {
-    setCheckedBoxes(e.target.checked);
+    // store the name and checked values into a variable and set it to event.target
+    const { name, checked } = e.target;
+
+    const updatedCheckbox = { ...checkBoxFunc };
+
+    Object.keys(updatedCheckbox).forEach((key) => {
+      updatedCheckbox[key] = false;
+    });
+
+    updatedCheckbox[name] = checked;
+
+    setCheckBoxFunc(updatedCheckbox);
+
+    // setCheckedBoxes(e.target.checked);
+
+    // console.log(numbers);
   };
 
   // ADVANCED FUNCTIONALITY
@@ -66,7 +88,7 @@ const Step2 = () => {
   });
 
   // This function displays the monthly price plan
-  const PriceMonth = () => {
+  const PriceMonthArcade = () => {
     const { price } = { ...monthArcade };
     return (
       <div>
@@ -75,9 +97,47 @@ const Step2 = () => {
     );
   };
   // This function displays the yearly price plan
-  const PriceYear = ({ fee }) => {
+  const PriceYearArcade = ({ fee }) => {
     // Use this method to destructure objects not the array method (e.g fee[yearArcade])
     const { price, bonus } = { ...yearArcade };
+    return (
+      <div>
+        <h2 className="text-gray">{price}</h2>
+        <h3 className="text-marineBlue">{bonus}</h3>
+      </div>
+    );
+  };
+  // This function displays the monthly price plan
+  const PriceMonthAdvanced = () => {
+    const { price } = { ...monthAdvanced };
+    return (
+      <div>
+        <h2 className="text-gray">{price}</h2>
+      </div>
+    );
+  };
+  // This function displays the yearly price plan for the Advanced Plan
+  const PriceYearAdvanced = () => {
+    const { price, bonus } = { ...yearAdvanced };
+    return (
+      <div>
+        <h2 className="text-gray">{price}</h2>
+        <h3 className="text-marineBlue">{bonus}</h3>
+      </div>
+    );
+  };
+  // This function displays the monthly price plan for the Pro Plan
+  const PriceMonthPro = () => {
+    const { price } = { ...monthPro };
+    return (
+      <div>
+        <h2 className="text-gray">{price}</h2>
+      </div>
+    );
+  };
+  // This function displays the yearly price plan for Pro
+  const PriceYearPro = () => {
+    const { price, bonus } = { ...yearPro };
     return (
       <div>
         <h2 className="text-gray">{price}</h2>
@@ -144,7 +204,8 @@ const Step2 = () => {
               type="checkbox"
               value="arcade"
               id="arcade"
-              checked={checkedBoxes}
+              name="arcade"
+              checked={checkBoxFunc["arcade"]}
               onChange={handleSetCheckedBoxes}
               className="invisible absolute"
             />
@@ -157,15 +218,16 @@ const Step2 = () => {
                 <h3 className="text-marineBlue text-base font-semibold">
                   Arcade
                 </h3>
-                {prices ? <PriceYear /> : <PriceMonth />}
+                {prices ? <PriceYearArcade /> : <PriceMonthArcade />}
               </div>
             </label>
             <input
               type="checkbox"
               value="advanced"
               id="advanced"
-              checked={advCheckedBoxes}
-              onChange={handleSetAdvCheckedBoxes}
+              name="advanced"
+              checked={checkBoxFunc["advanced"]}
+              onChange={handleSetCheckedBoxes}
               className="invisible absolute "
             />
             <label
@@ -177,15 +239,16 @@ const Step2 = () => {
                 <h3 className="text-marineBlue text-base font-semibold">
                   Advanced
                 </h3>
-                {prices ? <PriceYear /> : <PriceMonth />}
+                {prices ? <PriceYearAdvanced /> : <PriceMonthAdvanced />}
               </div>
             </label>
             <input
               type="checkbox"
               value="pro"
               id="pro"
-              checked={proCheckedBoxes}
-              onChange={handleSetProCheckedBoxes}
+              name="pro"
+              checked={checkBoxFunc["pro"]}
+              onChange={handleSetCheckedBoxes}
               className="invisible absolute"
             />
             <label
@@ -195,7 +258,7 @@ const Step2 = () => {
               <img src={proImg} alt="" className="md:mb-7" />
               <div className="">
                 <h3 className="text-marineBlue text-base font-semibold">Pro</h3>
-                {prices ? <PriceYear /> : <PriceMonth />}
+                {prices ? <PriceYearPro /> : <PriceMonthPro />}
               </div>
             </label>
           </div>
