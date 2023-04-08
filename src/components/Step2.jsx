@@ -38,23 +38,6 @@ const Step2 = () => {
     // console.log(numbers);
   };
 
-  // ADVANCED FUNCTIONALITY
-  // This is to toggle the checked state of the Advanced Plan
-  const [advCheckedBoxes, setAdvCheckedBoxes] = useState(false);
-
-  // This is used for the onChange functionality in the Advanced checkbox
-  const handleSetAdvCheckedBoxes = (e) => {
-    setAdvCheckedBoxes(e.target.checked);
-  };
-
-  // PRO FUNCTIONALITY
-  // This is to toggle the checked state of the Pro Plan
-  const [proCheckedBoxes, setProCheckedBoxes] = useState(false);
-
-  // This is used for the onChange functionality in the Pro checkbox
-  const handleSetProCheckedBoxes = (e) => {
-    setProCheckedBoxes(e.target.checked);
-  };
   // This is the onChange functionality for the form
   const handleSubmit = (e) => {
     e.preventDefault();
