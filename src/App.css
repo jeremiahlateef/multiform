@@ -128,3 +128,24 @@ Style for the checked inputs in Step 2
   background-color: hsl(231, 100%, 99%);
   border-color: hsl(213, 96%, 18%);
 }
+/* 
+=============
+Style for the checked inputs in Step 3
+=============
+*/
+#service:checked ~ label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(213, 96%, 18%);
+}
+#storage:checked ~ label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(213, 96%, 18%);
+}
+#profile:checked ~ label {
+  background-color: hsl(231, 100%, 99%);
+  border-color: hsl(213, 96%, 18%);
+}
+.checkbox:checked + span {
+  border: hsl(213, 96%, 18%);
+  background: hsl(243, 100%, 62%);
+}
