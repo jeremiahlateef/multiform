@@ -1,48 +1,32 @@
-import React from "react";
+import React, { createContext } from "react";
 import Header from "./Header";
 import { useState } from "react";
 
-const Step1 = ({ setFormValue, value, setValue }) => {
-  // This useState function below is to store the value inputted in the forms.
+export const Step1Context = createContext();
 
+const Step1 = () => {
   const [userInput, setUserInput] = useState({
-    // To make this work: 1. set name to name in the input for name, value as formValue.name
-    // 2. set name to email in the input for name, value as formValue.email
-    // 3. set name to number in input for number, value as formValue.number
-    // set onChange to handleChange
-    name: "",
     email: "",
     number: "",
   });
 
   const handleChange = (e) => {
-    // console.log(e.target.name);
-    // console.log(e.target.value);
-
-    //set the useState function (setUserInput) to the value that will be inputted in the form.
-    // In other words, we update the value in the object to what is inputted.
-    // We used dynamic keys
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData.fromEntries(e.currentTarget);
-    console.log(formData);
-    const newUser = Object.fromEntries(formData);
-
     console.log(newUser);
-    // setFormValue(console.log("hi"));
   };
-  // const mockBtn = () => {
-  //   setFormValue(handleSubmit);
-  //   console.log("hi");
-  // };
-
-  // mockBtn;
+  const objectValue = {
+    userInput: userInput,
+    setUserInput: setUserInput,
+    handleSubmit: handleSubmit,
+    handleChange: handleChange,
+  };
   return (
-    <>
+    <Step1Context.Provider value={{ ...objectValue }}>
       <div className="">
         <Header number={0} />
         <div className="">
@@ -128,7 +112,7 @@ const Step1 = ({ setFormValue, value, setValue }) => {
           </form>
         </div>
       </div>
-    </>
+    </Step1Context.Provider>
   );
 };
 
