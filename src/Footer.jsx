@@ -13,11 +13,11 @@ const Footer = ({ setFormValue, footBtn, value, setValue }) => {
   };
   const handleBtnNext = () => {
     if (setValue(value === 0)) {
-      const moveFow = () => {
-        // value + 1;
-        // handleSubmit();
-      };
-      return moveFow();
+      // const moveFow = () => {
+      //   // handleSubmit();
+      // };
+      // return moveFow();
+      return value + 1;
     } else {
       return setValue(value <= 2 ? value + 1 : value);
     }
