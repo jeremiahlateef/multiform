@@ -95,7 +95,7 @@ const Step3 = () => {
               <input
                 type="checkbox"
                 id="service"
-                value={"service"}
+                value={serviceCheckedBoxes}
                 name="service"
                 className="absolute invisible checkbox"
                 checked={serviceCheckedBoxes}
@@ -130,7 +130,7 @@ const Step3 = () => {
               <input
                 type="checkbox"
                 id="storage"
-                value={"storage"}
+                value={storageCheckedBoxes}
                 name="storage"
                 className="absolute invisible checkbox"
                 checked={storageCheckedBoxes}
@@ -169,7 +169,7 @@ const Step3 = () => {
               <input
                 type="checkbox"
                 id="profile"
-                value={"profile"}
+                value={profileCheckedBoxes}
                 name="profile"
                 className="absolute invisible  checkbox"
                 checked={profileCheckedBoxes}
