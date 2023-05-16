@@ -1,32 +1,54 @@
 import React, { createContext } from "react";
 import Header from "./Header";
 import { useState } from "react";
+import { useContext } from "react";
 
 export const Step1Context = createContext();
 
-const Step1 = () => {
-  const [userInput, setUserInput] = useState({
-    email: "",
-    number: "",
-  });
+export const useAppContext = () => useContext(Step1Context);
 
-  const handleChange = (e) => {
-    setUserInput({ ...userInput, [e.target.name]: e.target.value });
-  };
+const Step1 = () => {
+  const [name, setName] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [email, setEmail] = useState("");
+  // const [userInput, setUserInput] = useState({
+  //   name: "",
+  //   email: "",
+  //   number: "",
+  // });
+
+  const [inputName, setInputName] = useState("");
+
+  const [labelDisplay, setLabelDisplay] = useState("");
+  // const handleChange = (e) => {
+  //   setUserInput({ ...userInput, [e.target.name]: e.target.value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(newUser);
+    // const users = { ...userInput };
+    if (name.trim() === "") {
+      setLabelDisplay("block");
+    } else {
+      setLabelDisplay("hidden");
+      const value = { name };
+      setInputName(value);
+      console.log(value);
+    }
   };
+  // const objectValue = {
+  //   userInput: userInput,
+  //   setUserInput: setUserInput,
+  //   handleSubmit: handleSubmit,
+  //   handleChange: handleChange,
+  // };
   const objectValue = {
-    userInput: userInput,
-    setUserInput: setUserInput,
-    handleSubmit: handleSubmit,
-    handleChange: handleChange,
+    name: name,
+    // handleSubmit,
   };
+  console.log(inputName);
   return (
-    <Step1Context.Provider value={{ ...objectValue }}>
+    <Step1Context.Provider value={{ inputName, setInputName }}>
       <div className="">
         <Header number={0} />
         <div className="">
@@ -43,6 +65,7 @@ const Step1 = () => {
                 <label
                   htmlFor="name"
                   className=" hidden text-red-500 font-semibold "
+                  style={{ display: `${labelDisplay}` }}
                 >
                   This field is required
                 </label>
@@ -51,8 +74,8 @@ const Step1 = () => {
                 type="text"
                 name="name"
                 id="name"
-                value={userInput.name}
-                onChange={handleChange}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-marineBlue"
                 placeholder="e.g Stephen King"
               />
@@ -77,8 +100,8 @@ const Step1 = () => {
                 type="email"
                 name="email"
                 id="email"
-                value={userInput.email}
-                onChange={handleChange}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-1 focus:outline-marineBlue  focus:border-0 "
                 placeholder="e.g stephenking@lorem.com"
               />
@@ -103,12 +126,13 @@ const Step1 = () => {
                 type="number"
                 name="number"
                 id="number"
-                value={userInput.number}
-                onChange={handleChange}
+                value={telephone}
+                onChange={(e) => setTelephone(e.target.value)}
                 className="w-full text-marineBlue font-semibold text-base border border-gray rounded-md py-2 px-3 focus:outline-marineBlue"
                 placeholder="e.g +1 234 567 890"
               />
             </div>
+            <button type="submit">add item</button>
           </form>
         </div>
       </div>
