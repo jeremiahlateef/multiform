@@ -10,8 +10,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ContextProvider>
       <App />
-      <Step1 />
-      <Step4 />
     </ContextProvider>
   </React.StrictMode>
 );
