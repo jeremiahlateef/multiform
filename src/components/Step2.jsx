@@ -85,8 +85,8 @@ const Step2 = () => {
     const { price, bonus } = { ...yearArcade };
     return (
       <div>
-        <h2 className="text-gray">{price}</h2>
-        <h3 className="text-marineBlue">{bonus}</h3>
+        <h2 className="text-gray text-sm md:text-base">{price}</h2>
+        <h3 className="text-marineBlue text-sm md:text-base">{bonus}</h3>
       </div>
     );
   };
@@ -95,7 +95,7 @@ const Step2 = () => {
     const { price } = { ...monthAdvanced };
     return (
       <div>
-        <h2 className="text-gray">{price}</h2>
+        <h2 className="text-gray text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -104,8 +104,8 @@ const Step2 = () => {
     const { price, bonus } = { ...yearAdvanced };
     return (
       <div>
-        <h2 className="text-gray">{price}</h2>
-        <h3 className="text-marineBlue">{bonus}</h3>
+        <h2 className="text-gray text-sm md:text-base">{price}</h2>
+        <h3 className="text-marineBlue text-sm md:text-base">{bonus}</h3>
       </div>
     );
   };
@@ -114,7 +114,7 @@ const Step2 = () => {
     const { price } = { ...monthPro };
     return (
       <div>
-        <h2 className="text-gray">{price}</h2>
+        <h2 className="text-gray text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -123,8 +123,8 @@ const Step2 = () => {
     const { price, bonus } = { ...yearPro };
     return (
       <div>
-        <h2 className="text-gray">{price}</h2>
-        <h3 className="text-marineBlue">{bonus}</h3>
+        <h2 className="text-gray text-sm md:text-base">{price}</h2>
+        <h3 className="text-marineBlue text-sm md:text-base">{bonus}</h3>
       </div>
     );
   };
@@ -182,7 +182,7 @@ const Step2 = () => {
       <div className="md:w-full">
         <Header number={1} />
         <form action="" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row mb-8 gap-3 ">
+          <div className="flex flex-col md:flex-row mb-4 md:mb-8 gap-3 ">
             <input
               type="checkbox"
               value="arcade"
@@ -194,11 +194,11 @@ const Step2 = () => {
             />
             <label
               htmlFor="arcade"
-              className="w-full linear duration-200 md:w-1/3 p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start  gap-3 cursor-pointer"
+              className="w-full linear duration-200 md:w-1/3 p-3 md-p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start  gap-3 cursor-pointer"
             >
               <img src={arcadeImg} alt="" className="md:mb-7" />
               <div className="">
-                <h3 className="text-marineBlue text-base font-semibold">
+                <h3 className="text-marineBlue text-sm md:text-base font-semibold">
                   Arcade
                 </h3>
                 {prices ? <PriceYearArcade /> : <PriceMonthArcade />}
@@ -215,11 +215,11 @@ const Step2 = () => {
             />
             <label
               htmlFor="advanced"
-              className="w-full linear duration-200 md:w-1/3 p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start advanced gap-3 cursor-pointer"
+              className="w-full linear duration-200 md:w-1/3 p-3 md-p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start advanced gap-3 cursor-pointer"
             >
               <img src={advancedImg} alt="" className="md:mb-7" />
               <div className="">
-                <h3 className="text-marineBlue text-base font-semibold">
+                <h3 className="text-marineBlue text-sm md:text-base font-semibold">
                   Advanced
                 </h3>
                 {prices ? <PriceYearAdvanced /> : <PriceMonthAdvanced />}
@@ -236,11 +236,13 @@ const Step2 = () => {
             />
             <label
               htmlFor="pro"
-              className="w-full linear duration-200 md:w-1/3 p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start  gap-3 cursor-pointer"
+              className="w-full linear duration-200 md:w-1/3 p-3 md-p-4 border rounded-md border-gray hover:border-marineBlue flex md:block items-start  gap-3 cursor-pointer"
             >
               <img src={proImg} alt="" className="md:mb-7" />
               <div className="">
-                <h3 className="text-marineBlue text-base font-semibold">Pro</h3>
+                <h3 className="text-marineBlue text-sm md:text-base font-semibold">
+                  Pro
+                </h3>
                 {prices ? <PriceYearPro /> : <PriceMonthPro />}
               </div>
             </label>
