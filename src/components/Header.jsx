@@ -9,10 +9,10 @@ const Header = ({ number }) => {
   return (
     <>
       <div className="mb-4 md:mb-8 ">
-        <h1 className="text-marineBlue w-full font-bold text-2xl md:text-3xl">
+        <h1 className="text-marineBlue w-full font-bold text-lg md:text-3xl">
           {title}
         </h1>
-        <p className="text-gray">{text}</p>
+        <p className="text-gray text-sm md:text-base">{text}</p>
       </div>
     </>
   );
