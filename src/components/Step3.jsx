@@ -208,7 +208,7 @@ const Step3 = () => {
                     />
                   </span>
                   <div className="">
-                    <h3 className="text-marineBlue  font-semibold">
+                    <h3 className="text-marineBlue  font-semibold text-sm md:text-base">
                       Customizable profile
                     </h3>
                     <h2 className="text-gray text-sm md:text-base">
