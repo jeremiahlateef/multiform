@@ -15,17 +15,17 @@ const Step3 = () => {
   };
 
   // This is used to toggle the content of month in service
-  const [monthService, setMonthService] = useState({ price: "$1/mo" });
+  const [monthService, setMonthService] = useState({ price: "+$1/mo" });
 
   // This is used to toggle the content of year in service
-  const [yearService, setYearService] = useState({ price: "$10/yr" });
+  const [yearService, setYearService] = useState({ price: "+$10/yr" });
 
   // This function displays the monthly price plan for the service Plan
   const PriceMonthService = () => {
     const { price } = { ...monthService };
     return (
       <div>
-        <h2 className="text-marineBlue">{price}</h2>
+        <h2 className="text-marineBlue text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -35,7 +35,7 @@ const Step3 = () => {
     const { price } = { ...yearService };
     return (
       <div>
-        <h2 className="text-marineBlue">{price}</h2>
+        <h2 className="text-marineBlue text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -53,10 +53,10 @@ const Step3 = () => {
   const [profileCheckedBoxes, setProfileCheckedBoxes] = useState(false);
 
   // This is used to toggle the content of month in storage and profile
-  const [monthStoragePro, setMonthStoragePro] = useState({ price: "$2/mo" });
+  const [monthStoragePro, setMonthStoragePro] = useState({ price: "+$2/mo" });
 
   // This is used to toggle the content of month in storage and profile
-  const [yearStoragePro, setYearStoragePro] = useState({ price: "$20/yr" });
+  const [yearStoragePro, setYearStoragePro] = useState({ price: "+$20/yr" });
   // This function displays the monthly price plan for the storage and profile Plan
 
   // This is used for the onChange functionality in the Profile checkbox
@@ -67,7 +67,7 @@ const Step3 = () => {
     const { price } = { ...monthStoragePro };
     return (
       <div>
-        <h2 className="text-marineBlue">{price}</h2>
+        <h2 className="text-marineBlue text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -77,7 +77,7 @@ const Step3 = () => {
     const { price } = { ...yearStoragePro };
     return (
       <div>
-        <h2 className="text-marineBlue">{price}</h2>
+        <h2 className="text-marineBlue text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -90,35 +90,42 @@ const Step3 = () => {
       <div className="">
         <Header number={2} />
         <form action="" onSubmit={handleSubmit}>
-          <div className=" mb-8 grid gap-y-4">
+          <div className=" mb-5 md:mb-8 grid gap-y-4">
             <div className="relative ">
               <input
                 type="checkbox"
                 id="service"
                 value={serviceCheckedBoxes}
                 name="service"
-                className="absolute invisible checkbox"
+                className="absolute invisible top-8   checkbox"
                 checked={serviceCheckedBoxes}
                 onChange={handleServiceCheckedBoxes}
               />
-              <span className="absolute top-1/2 transform left-4 -translate-y-1/2 border-gray border  w-5 h-5 rounded-sm ">
-                <FaCheck
-                  className={` h-3 w-3 absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 ${
-                    serviceCheckedBoxes ? `text-white` : `text-transparent`
-                  }`}
-                />
-              </span>
+
               <label
                 htmlFor="service"
-                className="flex items-center justify-between  border rounded-md border-gray hover:border-marineBlue duration-200   p-4 gap-4"
+                className="flex items-center justify-between  border rounded-md border-gray hover:border-marineBlue duration-200 p-3 md:p-4 gap-4"
               >
-                <div className="flex gap-4 pl-8 md:pl-10">
+                <div className="flex gap-4 items-center">
                   {" "}
+                  <span
+                    className={`grid items-center justify-center border-gray border  w-4 h-4 md:h-5 md:w-5 rounded-sm ${
+                      serviceCheckedBoxes ? `bg-purplishBlue border-none` : ``
+                    } `}
+                  >
+                    <FaCheck
+                      className={` h-3 w-3  ${
+                        serviceCheckedBoxes ? `text-white` : `text-transparent`
+                      }`}
+                    />
+                  </span>
                   <div className="">
-                    <h3 className="text-marineBlue text-base font-semibold">
+                    <h3 className="text-marineBlue text-sm md:text-base font-semibold">
                       Online service
                     </h3>
-                    <h2 className="text-gray">Access to multiplayer games</h2>
+                    <h2 className="text-gray text-sm md:text-base">
+                      Access to multiplayer games
+                    </h2>
                   </div>
                 </div>
                 <div className="">
@@ -136,24 +143,31 @@ const Step3 = () => {
                 checked={storageCheckedBoxes}
                 onChange={handleSetStorageCheckedBoxes}
               />
-              <span className="absolute top-1/2 transform left-4 -translate-y-1/2 border-gray border  w-5 h-5 rounded-sm ">
-                <FaCheck
-                  className={` h-3 w-3 absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 ${
-                    storageCheckedBoxes ? `text-white` : `text-transparent`
-                  }`}
-                />
-              </span>
+
               <label
                 htmlFor="storage"
-                className="flex items-center justify-between  border rounded-md border-gray hover:border-marineBlue duration-200   p-4 gap-4"
+                className="flex items-center justify-between  border rounded-md border-gray hover:border-marineBlue duration-200   p-3 md:p4 gap-4"
               >
-                <div className="flex gap-4 pl-8 md:pl-10">
+                <div className="flex gap-4 items-center">
                   {" "}
+                  <span
+                    className={`grid items-center justify-center border-gray border  w-4 h-4 md:h-5 md:w-5 rounded-sm ${
+                      storageCheckedBoxes ? `bg-purplishBlue border-none` : ``
+                    } `}
+                  >
+                    <FaCheck
+                      className={` h-3 w-3  ${
+                        storageCheckedBoxes ? `text-white` : `text-transparent`
+                      }`}
+                    />
+                  </span>
                   <div className="">
-                    <h3 className="text-marineBlue text-base font-semibold">
+                    <h3 className="text-marineBlue text-sm md:text-base font-semibold">
                       Larger storage
                     </h3>
-                    <h2 className="text-gray">Extra 1TB of cloud save</h2>
+                    <h2 className="text-gray text-sm md:text-base">
+                      Extra 1TB of cloud save
+                    </h2>
                   </div>
                 </div>
                 <div className="">
@@ -175,24 +189,31 @@ const Step3 = () => {
                 checked={profileCheckedBoxes}
                 onChange={handleSetProfileCheckedBoxes}
               />
-              <span className="absolute top-1/2 transform left-4 -translate-y-1/2 border-gray border  w-5 h-5 rounded-sm ">
-                <FaCheck
-                  className={` h-3 w-3 absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 ${
-                    profileCheckedBoxes ? `text-white` : `text-transparent`
-                  }`}
-                />
-              </span>
+
               <label
                 htmlFor="profile"
-                className="flex items-center justify-between  border rounded-md border-gray hover:border-marineBlue duration-200   p-4 gap-4"
+                className="flex items-center justify-between  border rounded-md border-gray hover:border-marineBlue duration-200   p-3 md:p-4 gap-4"
               >
-                <div className="flex gap-4 pl-8 md:pl-10">
+                <div className="flex gap-4 items-center">
                   {" "}
+                  <span
+                    className={`grid items-center justify-center border-gray border  w-4 h-4 md:w-5 md:h-5 rounded-sm ${
+                      profileCheckedBoxes ? `bg-purplishBlue border-none` : ``
+                    } `}
+                  >
+                    <FaCheck
+                      className={` h-3 w-3  ${
+                        profileCheckedBoxes ? `text-white` : `text-transparent`
+                      }`}
+                    />
+                  </span>
                   <div className="">
-                    <h3 className="text-marineBlue text-base font-semibold">
+                    <h3 className="text-marineBlue  font-semibold">
                       Customizable profile
                     </h3>
-                    <h2 className="text-gray">Custom theme on your profile</h2>
+                    <h2 className="text-gray text-sm md:text-base">
+                      Custom theme on your profile
+                    </h2>
                   </div>
                 </div>
                 <div className="">
