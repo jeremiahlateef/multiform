@@ -75,7 +75,7 @@ const Step2 = () => {
     const { price } = { ...monthArcade };
     return (
       <div>
-        <h2 className="text-gray">{price}</h2>
+        <h2 className="text-gray text-sm md:text-base">{price}</h2>
       </div>
     );
   };
@@ -148,8 +148,8 @@ const Step2 = () => {
       >
         {/* The text color will change to gray if prices is positive and vice-versa. prices is currently negative */}
         <span
-          className={`font-semibold ${
-            prices ? `text-gray` : `text-marineBlue`
+          className={`font-semibold text-sm md:text-base ${
+            prices ? `text-gray  ` : `text-marineBlue`
           }`}
         >
           Monthly
@@ -167,7 +167,7 @@ const Step2 = () => {
         </label>
         {/* The text color will change to gray if prices is negative and vice-versa. prices is currently negative */}
         <span
-          className={` font-semibold ${
+          className={` font-semibold text-sm md:text-base ${
             prices ? `text-marineBlue` : `text-gray`
           }`}
         >
